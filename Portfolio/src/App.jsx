@@ -93,6 +93,7 @@ function App() {
           </div>
         </div>
       </div>
+      <div className='w-full bg-black h-[2px]'></div>
 
       <div className="Content mx-[2vw] w-[95.24vw] h-auto m-0">
         <section id='about' className="h-[91.6vh] m-0 flex items-center justify-between">
