@@ -18,11 +18,63 @@ function App() {
       aboutImg.classList.add('animate-slide-in-right');
     }
   }, [])
+
+  useEffect(() => {
+    const upArrow = document.querySelector('a[href="#navbar"]');
+    if (upArrow) {
+      upArrow.addEventListener('click', (e) => {
+        e.preventDefault();
+        const navbar = document.querySelector('#navbar');
+        if (navbar) {
+          navbar.scrollIntoView({ behavior: 'smooth' });
+        }
+      });
+    }
+  }, []);
+  
+  useEffect(() => {
+    const about = document.querySelector('a[href="#about"]');
+    if (about) {
+      about.addEventListener('click', (e) => {
+        e.preventDefault();
+        const aboutsec = document.querySelector('#about');
+        if (aboutsec) {
+          aboutsec.scrollIntoView({ behavior: 'smooth' });
+        }
+      });
+    }
+  }, []);
+
+  useEffect(() => {
+    const projects = document.querySelector('a[href="#projects"]');
+    if (projects) {
+      projects.addEventListener('click', (e) => {
+        e.preventDefault();
+        const projectssec = document.querySelector('#projects');
+        if (projectssec) {
+          projectssec.scrollIntoView({ behavior: 'smooth' });
+        }
+      });
+    }
+  }, []);
+  useEffect(() => {
+    const contact = document.querySelector('a[href="#contact"]');
+    if (contact) {
+      contact.addEventListener('click', (e) => {
+        e.preventDefault();
+        const contactsec = document.querySelector('#contact');
+        if (contactsec) {
+          contactsec.scrollIntoView({ behavior: 'smooth' });
+        }
+      });
+    }
+  }, []);
+  
   
 
   return (
     <>
-      <div id='navbar' className="NavBar z-50 m-0 w-full h-[8vh] p-10 flex items-center justify-between relative pointer-events-auto bg-opacity-50">
+      <div id='navbar' className="NavBar z-50 m-0 w-full h-[8vh] p-10 flex items-center justify-between relative pointer-events-auto">
         <div className=" w-[20vw] flex items-center justify-start">  
           <a href="https://github.com/Devasheesh2004" target="_blank">
           <svg height="37" aria-hidden="true" viewBox="0 0 24 24" version="1.1" width="37" data-view-component="true" class="octicon octicon-mark-github v-align-middle">
@@ -31,13 +83,13 @@ function App() {
         </a>
         </div>
 
-        <a href='/' className="w-[60vw] text-[2.5vw] font-mono flex items-center justify-center font-extrabold bg-gradient-to-r from-rose-600 via-pink-500 to-amber-300 bg-clip-text text-shadow-xs text-transparent">Devasheesh Upreti</a>
+        <a href='/' className="w-[60vw] text-[5vh] font-mono flex items-center justify-center font-extrabold bg-gradient-to-r from-rose-600 via-pink-500 to-amber-300 bg-clip-text text-shadow-xs text-transparent">Devasheesh Upreti</a>
 
         <div className="w-[20vw] flex items-center justify-end">
-          <div className="flex gap-5 font-mono text-[1.1vw] items-center h-[4vh] text-white">
-            <a href='#about' className="cursor-pointer hover:text-amber-300 transition-colors duration-200 relative z-20 px-2 py-1 border border-transparent hover:border-amber-300">About</a>
-            <a href='#projects' className="cursor-pointer hover:text-amber-300 transition-colors duration-200 relative z-20 px-2 py-1 border border-transparent hover:border-amber-300">Projects</a>
-            <a href='#contact' className="cursor-pointer hover:text-amber-300 transition-colors duration-200 relative z-20 px-2 py-1 border border-transparent hover:border-amber-300">Contact</a>
+          <div className="flex gap-5 font-mono text-[2vh] items-center h-[4vh] text-white">
+            <a href='#about' className="cursor-pointer hover:text-amber-300 transition-colors duration-200 relative z-20 px-2 py-1 border border-transparent hover:border-amber-300 text-shadow-md text-shadow-black">About</a>
+            <a href='#projects' className="cursor-pointer hover:text-amber-300 transition-colors duration-200 relative z-20 px-2 py-1 border border-transparent hover:border-amber-300 text-shadow-md text-shadow-black">Projects</a>
+            <a href='#contact' className="cursor-pointer hover:text-amber-300 transition-colors duration-200 relative z-20 px-2 py-1 border border-transparent hover:border-amber-300 text-shadow-md text-shadow-black">Contact</a>
           </div>
         </div>
       </div>
@@ -45,7 +97,7 @@ function App() {
       <div className="Content mx-[2vw] w-[95.24vw] h-auto m-0">
         <section id='about' className="h-[91.6vh] m-0 flex items-center justify-between">
           <div className="about-intro h-[80vh] w-[45vw] flex items-center justify-center px-10">
-            <p className="p-5 h-[80%] text-shadow-md text-shadow-gray-600 content-center font-mono text-stone-200 text-[1.5vw] text-justify text-">I'm Devasheesh, a fresher full-stack web developer with a passion for crafting seamless and impactful digital solutions. Enthusiastic, ambitious, and committed to continuous learning, I aim to grow my skills while contributing meaningfully to the tech industry. I'm eager to work on real-world projects that challenge my creativity and push the boundaries of what's possible on the web.</p>
+            <p className="p-5 h-[80%] text-shadow-md text-shadow-gray-600 content-center font-mono text-stone-200 text-[3vh] text-justify">I'm Devasheesh, a fresher full-stack web developer with a passion for crafting seamless and impactful digital solutions. Enthusiastic, ambitious, and committed to continuous learning, I aim to grow my skills while contributing meaningfully to the tech industry. I'm eager to work on real-world projects that challenge my creativity and push the boundaries of what's possible on the web.</p>
           </div>
           <div className="about-img h-[80vh] relative w-[45vw] flex items-center justify-center">
             <img className='absolute h-3/4 w-4/6 rounded-md shadow-2xl shadow-gray-800' src={Photo} alt="" />
@@ -143,7 +195,7 @@ function App() {
                 <p className='w-1/2 items-center'>
                   Email - <span className='text-[2.3vh]'>devasheesh.upreti@gmail.com</span>
                   <br />
-                  Linkedin - <a className='text-[2.3vh]' href="https://www.linkedin.com/in/devasheesh-upreti-5b1b82256/">in/devasheesh-upreti-5b1b82256/</a>
+                  Linkedin - <a className='text-[2.3vh]' href="https://www.linkedin.com/in/devasheesh-upreti-5b1b82256/" target='_blank'>in/devasheesh-upreti-5b1b82256/</a>
                   <br />
                   Phone Number - <span className='text-[2.3vh]'>8700732101</span>
                   <br />
